@@ -17,9 +17,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 print("The packages have been successfull imported")
-
 ```
-
 
 ```Python
 # Reading the sales data into a pandas dataframe 
@@ -27,6 +25,10 @@ print("The packages have been successfull imported")
 bikes_df = pd.read_csv("C:/Users/Mazeliz Depot1/Desktop/NGOZI/_Mr Emma class/Data Set/bikes.csv")
 bikes_df.head()    
 ```
+
+![Pandas_Screenshot](https://github.com/user-attachments/assets/af9aa6da-77df-41df-b161-769936db2b10)
+
+
 
 ## Data Modification
 ```Python
@@ -56,6 +58,8 @@ bikes_df["Profit"] = bikes_df["SalesRevenue"] - bikes_df["TotalCostPrice"]
 
 bikes_df.head()
 ```
+![Data_Modificatio](https://github.com/user-attachments/assets/7524d90e-b42a-429c-ad12-f141e4147e6d)
+
 
 ## DATA ANALYSIS
 #### DATA FILTERING
@@ -67,6 +71,10 @@ Is_bike = bikes_df["ProductCategory"] == "Bikes"
 bike_in_US = bikes_df[(Is_US) & (Is_bike)]
 bike_in_US.head()
 ```
+![Data Analysis Data Filtering](https://github.com/user-attachments/assets/9a55a24e-bcaa-465e-afb1-0eda9a8bc1a0)
+
+
+
 #### Data Aggregation / Data Summary
 ```Python
 #Aggregating the total profit by states in the United State for bike sales
@@ -75,12 +83,15 @@ Total_profit_by_states = bike_in_US.pivot_table(values = "Profit", index = "Cust
 Total_profit_by_states
 ```
 
+![Data Aggregation](https://github.com/user-attachments/assets/ed7f96a2-4dc0-47d9-8698-c6ff5c3d79a1)
+
 #### DATA SORTING
 ```Python
 # Sorting the Aggregated data to rank the the result(state) according to the top most profitable state 
 
 Total_profit_by_states.sort_values("Profit", ascending = False)
 ```
+![Data Sorting](https://github.com/user-attachments/assets/31ca38c1-1530-42e3-8886-a0d6c112735f)
 
 #### RESULT 
 ```Python
@@ -89,6 +100,10 @@ Total_profit_by_states.sort_values("Profit", ascending = False)
 Top_5_most_profitable_states_US =Total_profit_by_states.sort_values("Profit", ascending = False).head()
 Top_5_most_profitable_states_US
 ```
+
+![Result](https://github.com/user-attachments/assets/d4909ef7-1411-4165-8bc9-8810afaa16c3)
+
+
 ## DATA VISUALIZATION
 ```Python
 
